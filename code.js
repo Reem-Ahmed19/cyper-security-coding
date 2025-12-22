@@ -113,3 +113,96 @@
                 trail.style.transform = 'scale(2)';
             }, 50);
         });
+
+
+        // Create floating stardust particles
+        function summonStardust() {
+            const void_space = document.getElementById('cosmicVoid');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'stardust-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                
+                // Random colors
+                const colors = [
+                    'rgba(139, 92, 246, 0.6)',
+                    'rgba(220, 38, 38, 0.6)',
+                    'rgba(6, 182, 212, 0.6)'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                void_space.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        summonStardust();
+
+        // Add hover effect to cards
+        const phantomCards = document.querySelectorAll('.phantom-card');
+        phantomCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'rgba(220, 38, 38, 0.5)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'rgba(139, 92, 246, 0.2)';
+            });
+        });
+
+        // Trap mechanism click warning
+        const trapButtons = document.querySelectorAll('.trap-mechanism');
+        trapButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('⚠️ WARNING: This is a fake button used in scams!\n\nNever click suspicious links or buttons in unexpected emails.');
+            });
+        });
+
+        // Malicious link click warning
+        const maliciousLinks = document.querySelectorAll('.malicious-hyperlink');
+        maliciousLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('🚨 DANGER: This is a fake phishing link!\n\nAlways verify URLs before clicking. Look for:\n• Misspellings in the domain\n• Unusual characters\n• Shortened URLs\n• Requests for personal info');
+            });
+        });
+
+        // Add parallax effect to ethereal glows
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+            
+            document.querySelectorAll('.ethereal-glow').forEach((glow, index) => {
+                const speed = (index + 1) * 0.3;
+                glow.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`;
+            });
+        });
+
+        // Card entrance animation on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        }, observerOptions);
+
+        phantomCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            cardObserver.observe(card);
+        });

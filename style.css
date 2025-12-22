@@ -696,4 +696,469 @@
                 font-size: 48px;
             }
         }
-        
+         /* Mystical background effects */
+        .cosmic-void {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .ethereal-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+            animation: ethereal-drift 25s infinite ease-in-out;
+        }
+
+        .ethereal-glow--crimson {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.4) 0%, transparent 70%);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .ethereal-glow--violet {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 8s;
+        }
+
+        .ethereal-glow--amber {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%);
+            top: 50%;
+            right: 20%;
+            animation-delay: 15s;
+        }
+
+        @keyframes ethereal-drift {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(60px, -40px) scale(1.15);
+            }
+            66% {
+                transform: translate(-40px, 50px) scale(0.9);
+            }
+        }
+
+        /* Floating particles */
+        .stardust-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 50%;
+            animation: stardust-float 20s infinite linear;
+        }
+
+        @keyframes stardust-float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .deception-sanctuary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            z-index: 1;
+            animation: mystical-entrance 1.2s ease-out;
+        }
+
+        @keyframes mystical-entrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Header section */
+        .revelation-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .revelation-header__title {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: chromatic-pulse 4s infinite;
+        }
+
+        @keyframes chromatic-pulse {
+            0%, 100% {
+                filter: hue-rotate(0deg);
+            }
+            50% {
+                filter: hue-rotate(10deg);
+            }
+        }
+
+        .revelation-header__subtitle {
+            font-size: 20px;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        /* Scam examples grid */
+        .illusion-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Scam card */
+        .phantom-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .phantom-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(220, 38, 38, 0.5);
+            box-shadow: 
+                0 20px 60px rgba(220, 38, 38, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .phantom-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+            animation: energy-pulse 3s infinite;
+        }
+
+        @keyframes energy-pulse {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Danger badge */
+        .danger-sigil {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(220, 38, 38, 0.15);
+            border: 1px solid rgba(220, 38, 38, 0.4);
+            border-radius: 20px;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fca5a5;
+            animation: ominous-glow 2s infinite;
+        }
+
+        @keyframes ominous-glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+            }
+        }
+
+        .danger-sigil__icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .alert-triangle {
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 14px solid #dc2626;
+            position: relative;
+            filter: drop-shadow(0 0 4px rgba(220, 38, 38, 0.6));
+        }
+
+        .alert-triangle::after {
+            content: '!';
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 900;
+        }
+
+        /* Message header */
+        .message-origin {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .message-origin__avatar {
+            width: 48px;
+            height: 48px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .message-origin__avatar svg {
+            width: 24px;
+            height: 24px;
+            stroke: #8b5cf6;
+        }
+
+        .message-origin__details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .message-origin__sender {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 4px;
+        }
+
+        .message-origin__contact {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .message-origin__timestamp {
+            font-size: 12px;
+            color: #475569;
+            margin-top: 4px;
+        }
+
+        /* Message content */
+        .deceptive-narrative {
+            margin-bottom: 24px;
+        }
+
+        .deceptive-narrative__headline {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .deceptive-narrative__body {
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* Fake button/link */
+        .trap-mechanism {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-align: center;
+            font-weight: 600;
+            color: #22d3ee;
+            cursor: not-allowed;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trap-mechanism::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer-illusion 3s infinite;
+        }
+
+        @keyframes shimmer-illusion {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .trap-mechanism:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(16, 185, 129, 0.25) 100%);
+            transform: scale(1.02);
+        }
+
+        .malicious-hyperlink {
+            color: #22d3ee;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            padding: 12px 16px;
+            background: rgba(6, 182, 212, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            margin: 16px 0;
+            transition: all 0.3s;
+        }
+
+        .malicious-hyperlink:hover {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        /* Warning caption */
+        .wisdom-inscription {
+            text-align: center;
+            font-size: 15px;
+            font-style: italic;
+            color: #64748b;
+            padding: 20px;
+            background: rgba(139, 92, 246, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin-top: 24px;
+            position: relative;
+        }
+
+        .wisdom-inscription::before {
+            content: '"';
+            font-size: 48px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            color: rgba(139, 92, 246, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        .wisdom-inscription::after {
+            content: '"';
+            font-size: 48px;
+            position: absolute;
+            bottom: -30px;
+            right: 20px;
+            color: rgba(139, 92, 246, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        /* Responsive design */
+        @media (max-width: 968px) {
+            .illusion-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .revelation-header__title {
+                font-size: 42px;
+            }
+
+            .revelation-header__subtitle {
+                font-size: 18px;
+            }
+
+            .phantom-card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 40px 16px;
+            }
+
+            .revelation-header__title {
+                font-size: 36px;
+            }
+
+            .revelation-header__subtitle {
+                font-size: 16px;
+            }
+
+            .phantom-card {
+                padding: 20px;
+            }
+
+            .danger-sigil {
+                position: static;
+                display: inline-flex;
+                margin-bottom: 16px;
+            }
+
+            .message-origin__avatar {
+                width: 40px;
+                height: 40px;
+            }
+
+            .deceptive-narrative__headline {
+                font-size: 16px;
+            }
+
+            .deceptive-narrative__body {
+                font-size: 14px;
+            }
+        }
