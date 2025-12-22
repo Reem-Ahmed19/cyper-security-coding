@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberAware - Protect Yourself from Scams</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <div class="shield"></div>
+            </div>
+            <span>CyberAware</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#scam-types">Scam Types</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#report">Report a Scam</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <span onclick="switchLang('ar')">AR</span>
+                <span class="active" onclick="switchLang('en')">EN</span>
+            </div>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>One Click Can Cost Everything.</h1>
+            <p>Online scams are designed to look real. One mistake can expose your data, money, and identity.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="learnMore()">
+                    <span>Learn How Scams Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+                <button class="btn btn-secondary" onclick="protect()">
+                    <span>Protect Yourself</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="floating-dot"></div>
+            <div class="floating-ring"></div>
+            <div class="floating-square"></div>
+            <div class="warning-box">
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+                <div class="scan-line"></div>
+                <div class="warning-icon">
+                    <div class="triangle">
+                        <div class="exclamation">!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="code.js"></script>
+</body>
+</html>
