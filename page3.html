@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+     <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+     <div class="main-container">
+        <!-- Top Navigation -->
+        <nav class="top-navigation">
+             <div class="logo">🛡️ ScamAlert</div>
+            <ul class="main-menu">
+                <li><a href="index.html" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="page2.html" onclick="navigateTo('types')">Scam Types</a></li>
+                <li><a href="#" class="current">Statistics</a></li>
+                <li><a href="#" onclick="navigateTo('gallery')">Gallery</a></li>
+                <li><a href="#" onclick="navigateTo('report')">Report a Scam</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Header -->
+        <header class="hero-header">
+            <h1>Cyber Scam Statistics</h1>
+            <p class="hero-subtitle">Real data revealing the scale of online fraud. These numbers represent real victims and real losses.</p>
+        </header>
+
+        <!-- Main Statistics Grid -->
+        <div class="stats-grid" id="mainStatsGrid"></div>
+
+        <!-- Scam Types by Impact -->
+        <section class="impact-section">
+            <div class="section-header">
+                <h2>Scam Types by Impact</h2>
+                <p class="section-description">Distribution of reported scams and financial losses in 2023</p>
+            </div>
+            <div class="impact-chart" id="impactChart"></div>
+        </section>
+
+        <!-- Victims by Age Group -->
+        <section class="age-groups-section">
+            <div class="section-header">
+                <h2>Victims by Age Group</h2>
+                <p class="section-description">Scam reports and average financial losses across different age demographics</p>
+            </div>
+            <div class="age-groups-grid" id="ageGroupsGrid"></div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="insights-section">
+            <div class="section-header">
+                <h2>Key Insights</h2>
+            </div>
+            <div class="insights-container">
+                <div class="insights-grid" id="insightsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Data Source -->
+        <div class="data-source">
+            <p>Data compiled from FBI IC3, FTC, and international cybersecurity organizations (2023)</p>
+        </div>
+
+         <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Report scams to protect others!')">Report a Scam</a></li>
+                        <li><a href="#" onclick="alert('Learn more safety tips!')">Safety Tips</a></li>
+                        <li><a href="#" onclick="alert('Stay informed about latest threats!')">Latest Threats</a></li>
+                        <li><a href="#" onclick="alert('Get help now!')">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Learn about our mission!')">About Us</a></li>
+                        <li><a href="#" onclick="alert('Join our mission!')">Our Mission</a></li>
+                        <li><a href="#" onclick="alert('Contact us!')">Contact</a></li>
+                        <li><a href="#" onclick="alert('Join our team!')">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Read our privacy policy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="alert('View terms of service')">Terms of Service</a></li>
+                        <li><a href="#" onclick="alert('Cookie policy')">Cookie Policy</a></li>
+                        <li><a href="#" onclick="alert('Legal disclaimer')">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Follow us on Twitter!')">Twitter</a></li>
+                        <li><a href="#" onclick="alert('Like us on Facebook!')">Facebook</a></li>
+                        <li><a href="#" onclick="alert('Connect on LinkedIn!')">LinkedIn</a></li>
+                        <li><a href="#" onclick="alert('Subscribe to our newsletter!')">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ScamAlert. All rights reserved. Stay safe online. </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src="code3.js"></script>
+</body>
+</html>
