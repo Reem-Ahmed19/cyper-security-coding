@@ -943,7 +943,9 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
-
+  .main-menu a.current {
+            color: var(--white-text);
+        }
         /* Scroll to Top */
         .scroll-top {
             position: fixed;
