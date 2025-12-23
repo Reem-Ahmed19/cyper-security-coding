@@ -3,187 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberAware - Protect Yourself from Scams</title>
-    <link rel="stylesheet" href="style.css">
+    <title>One Click Can Cost Everything</title>
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg" id="animatedBg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
     </div>
 
-    <nav>
-        <div class="logo">
-            <div class="logo-icon">
-                <div class="shield"></div>
+    <header id="header">
+        <nav>
+            <div class="logo">🛡️ ScamAlert</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('deception')">Recognize</a></li>
+                <li><a onclick="scrollToSection('tactics')">Tactics</a></li>
+                <li><a onclick="scrollToSection('stats')">Statistics</a></li>
+                <li><a onclick="scrollToSection('comparison')">Fake vs Real</a></li>
+                <li><a onclick="scrollToSection('quiz')">Quiz</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <span>CyberAware</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#scam-types">Scam Types</a></li>
-            <li><a href="#statistics">Statistics</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#report">Report a Scam</a></li>
-        </ul>
-        <div class="nav-right">
-            <div class="lang-switch">
-                <span onclick="switchLang('ar')">AR</span>
-                <span class="active" onclick="switchLang('en')">EN</span>
-            </div>
-            <div class="theme-toggle" onclick="toggleTheme()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>One Click Can Cost Everything.</h1>
-            <p>Online scams are designed to look real. One mistake can expose your data, money, and identity.</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="learnMore()">
-                    <span>Learn How Scams Work</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
-                <button class="btn btn-secondary" onclick="protect()">
-                    <span>Protect Yourself</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="hero-visual">
-            <div class="floating-dot"></div>
-            <div class="floating-ring"></div>
-            <div class="floating-square"></div>
-            <div class="warning-box">
-                <div class="corner corner-tl"></div>
-                <div class="corner corner-tr"></div>
-                <div class="corner corner-bl"></div>
-                <div class="corner corner-br"></div>
-                <div class="scan-line"></div>
-                <div class="warning-icon">
-                    <div class="triangle">
-                        <div class="exclamation">!</div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>One Click Can <br><span class="highlight">Cost Everything.</span></h1>
+                <p>Every day, millions fall victim to online scams. The difference between safety and disaster is often just one moment of awareness.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('deception')"> Learn to Protect Yourself</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('quiz')"> Test Your Knowledge</button>
                 </div>
             </div>
         </div>
     </section>
 
-      <!-- Cosmic background -->
-    <div class="cosmic-void" id="cosmicVoid">
-        <div class="ethereal-glow ethereal-glow--crimson"></div>
-        <div class="ethereal-glow ethereal-glow--violet"></div>
-        <div class="ethereal-glow ethereal-glow--amber"></div>
-    </div>
-
-    <div class="deception-sanctuary">
-        <!-- Header -->
-        <header class="revelation-header">
-            <h1 class="revelation-header__title">Recognize the Deception</h1>
-            <p class="revelation-header__subtitle">These messages look legitimate. That's exactly the problem.</p>
-        </header>
-
-        <!-- Scam examples -->
-        <div class="illusion-gallery">
-            <!-- Email Scam Card -->
-            <article class="phantom-card">
-                <div class="danger-sigil">
-                    <div class="danger-sigil__icon">
-                        <div class="alert-triangle"></div>
-                    </div>
-                    <span>Scam Detected</span>
-                </div>
-
-                <div class="message-origin">
-                    <div class="message-origin__avatar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                            <path d="M3 7l9 6 9-6"></path>
-                        </svg>
-                    </div>
-                    <div class="message-origin__details">
-                        <div class="message-origin__sender">Security Alert</div>
-                        <div class="message-origin__contact">support@bank-security.com</div>
-                        <div class="message-origin__timestamp">2 minutes ago</div>
-                    </div>
-                </div>
-
-                <div class="deceptive-narrative">
-                    <h3 class="deceptive-narrative__headline">URGENT: Suspicious Activity Detected</h3>
-                    <p class="deceptive-narrative__body">
-                        We've detected unusual login attempts from an unknown device. Your account will be locked in 24 hours unless you verify your identity immediately.
-                    </p>
-                    <button class="trap-mechanism">
-                        Verify Account Now →
-                    </button>
-                </div>
-
-                <div class="wisdom-inscription">
-                    This is how scammers create urgency and fear.
-                </div>
-            </article>
-
-            <!-- SMS Scam Card -->
-            <article class="phantom-card">
-                <div class="danger-sigil">
-                    <div class="danger-sigil__icon">
-                        <div class="alert-triangle"></div>
-                    </div>
-                    <span>Scam Detected</span>
-                </div>
-
-                <div class="message-origin">
-                    <div class="message-origin__avatar">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
-                            <path d="M12 18h.01"></path>
-                        </svg>
-                    </div>
-                    <div class="message-origin__details">
-                        <div class="message-origin__sender">Delivery Service</div>
-                        <div class="message-origin__contact">+1-555-0123</div>
-                        <div class="message-origin__timestamp">Today, 14:32</div>
-                    </div>
-                </div>
-
-                <div class="deceptive-narrative">
-                    <p class="deceptive-narrative__body">
-                        Your package delivery failed. Package ID: #DHL8492
-                    </p>
-                    <p class="deceptive-narrative__body">
-                        Update your delivery address to avoid return:
-                    </p>
-                    <a href="#" class="malicious-hyperlink" onclick="return false;">
-                        https://dhl-delivery-update.com/track?id=8492
-                    </a>
-                    <p class="deceptive-narrative__body">
-                        Complete within 48 hours or package will be returned.
-                    </p>
-                </div>
-
-                <div class="wisdom-inscription">
-                    Fake urgency to make you click without thinking.
-                </div>
-            </article>
+    <!-- Recognize Deception Section -->
+    <section class="section" id="deception">
+        <div class="container">
+            <h2 class="section-title">Recognize the Deception</h2>
+            <div class="deception-grid" id="deceptionGrid"></div>
         </div>
-    </div>
+    </section>
+
+    <!-- Common Scam Tactics -->
+    <section class="section" id="tactics">
+        <div class="container">
+            <h2 class="section-title"> Common Scam Tactics</h2>
+            <div class="tactics-grid" id="tacticsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="section" id="stats">
+        <div class="container">
+            <h2 class="section-title">The Numbers Don't Lie</h2>
+            <div class="stats-grid" id="statsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Think Before You Share -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Think Before You Share</h2>
+            <div class="checklist" id="checklistContainer"></div>
+        </div>
+    </section>
+
+    <!-- Real Stories -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Real People, Real Losses</h2>
+            <div class="stories-grid" id="storiesGrid"></div>
+        </div>
+    </section>
+
+    <!-- Fake vs Real -->
+    <section class="section" id="comparison">
+        <div class="container">
+            <h2 class="section-title">Fake vs Real</h2>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 50px;">Can you spot the difference? Learn to identify legitimate communications from fraudulent ones.</p>
+            <div class="comparison-grid" id="comparisonGrid"></div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">Are You at Risk?</h2>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 50px;">Test your scam awareness with these real-world scenarios</p>
+            <div class="quiz-container" id="quizContainer"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pause. Check. Protect.</h2>
+            <p>Take a moment before every click. Your security depends on it.</p>
+            <button class="btn btn-primary" onclick="shareKnowledge()">Share This Knowledge</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Report scams to protect others!')">Report a Scam</a></li>
+                        <li><a href="#" onclick="alert('Learn more safety tips!')">Safety Tips</a></li>
+                        <li><a href="#" onclick="alert('Stay informed about latest threats!')">Latest Threats</a></li>
+                        <li><a href="#" onclick="alert('Get help now!')">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Learn about our mission!')">About Us</a></li>
+                        <li><a href="#" onclick="alert('Join our mission!')">Our Mission</a></li>
+                        <li><a href="#" onclick="alert('Contact us!')">Contact</a></li>
+                        <li><a href="#" onclick="alert('Join our team!')">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Read our privacy policy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="alert('View terms of service')">Terms of Service</a></li>
+                        <li><a href="#" onclick="alert('Cookie policy')">Cookie Policy</a></li>
+                        <li><a href="#" onclick="alert('Legal disclaimer')">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Follow us on Twitter!')">Twitter</a></li>
+                        <li><a href="#" onclick="alert('Like us on Facebook!')">Facebook</a></li>
+                        <li><a href="#" onclick="alert('Connect on LinkedIn!')">LinkedIn</a></li>
+                        <li><a href="#" onclick="alert('Subscribe to our newsletter!')">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ScamAlert. All rights reserved. Stay safe online. </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
 
     <script src="code.js"></script>
 </body>
