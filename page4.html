@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberAware - One Click Can Cost Everything</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="brand-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>CyberAware</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="page2.html" class="nav-link">Scam Types</a></li>
+                <li><a href="page3.html" class="nav-link">Statistics</a></li>
+                <li><a href="#scam-gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#protection-guide" class="nav-link">Report a Scam</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="lang-btn">AR</button>
+                <button class="lang-btn active">EN</button>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="content-wrapper">
+            <div class="hero-content">
+                <h1 class="hero-title">One Click Can <br><span class="text-highlight">Cost Everything.</span></h1>
+                <p class="hero-description">Every day, millions fall victim to online scams. The difference between safety and disaster is often just one moment of awareness.</p>
+                <div class="hero-actions">
+                    <button class="primary-btn" onclick="scrollToElement('protection-guide')">Learn to Protect Yourself</button>
+                    <button class="secondary-btn" onclick="scrollToElement('awareness-quiz')">Test Your Knowledge</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scam Gallery Section -->
+    <section class="content-section" id="scam-gallery">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Recognize the Deception</h2>
+            <p class="section-subheading">Learn to identify common scam tactics and protect yourself from online fraud</p>
+            
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="filterScams('all')">All</button>
+                <button class="filter-tab" onclick="filterScams('urgency')">Urgency Tactics</button>
+                <button class="filter-tab" onclick="filterScams('fake-offers')">Fake Offers</button>
+                <button class="filter-tab" onclick="filterScams('impersonation')">Impersonation</button>
+            </div>
+
+            <div class="scam-grid" id="scamGrid"></div>
+        </div>
+    </section>
+
+    <!-- Common Tactics Section -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Common Scam Tactics</h2>
+            <div class="tactics-grid" id="tacticsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="content-section" id="statistics-section">
+        <div class="content-wrapper">
+            <h2 class="section-heading">The Numbers Don't Lie</h2>
+            <div class="stats-container" id="statsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Protection Guide Section -->
+    <section class="content-section" id="protection-guide">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Think Before You Share</h2>
+            <div class="protection-checklist" id="protectionChecklist"></div>
+        </div>
+    </section>
+
+    <!-- Real Stories Section -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Real People, Real Losses</h2>
+            <div class="stories-container" id="storiesContainer"></div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="content-section" id="comparison-section">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Fake vs Real</h2>
+            <p class="section-subheading">Can you spot the difference? Learn to identify legitimate communications from fraudulent ones.</p>
+            <div class="comparison-container" id="comparisonContainer"></div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="content-section" id="awareness-quiz">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Are You at Risk?</h2>
+            <p class="section-subheading">Test your scam awareness with these real-world scenarios</p>
+            <div class="quiz-wrapper" id="quizWrapper"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner">
+        <div class="content-wrapper">
+            <h2>Pause. Check. Protect.</h2>
+            <p>Take a moment before every click. Your security depends on it.</p>
+            <button class="primary-btn" onclick="shareAwareness()">Share This Knowledge</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="content-wrapper">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>CyberAware</span>
+                    </div>
+                    <p class="footer-tagline">Empowering individuals with knowledge to recognize and prevent cyber scams. One informed decision at a time.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="page2.html">Scam Types</a></li>
+                            <li><a href="page3.html">Statistics</a></li>
+                            <li><a href="#scam-gallery">Gallery</a></li>
+                            <li><a href="#protection-guide">Report</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Resources</h3>
+                        <ul>
+                            <li><a href="#" onclick="showAlert('Education Hub')">Education Hub</a></li>
+                            <li><a href="#" onclick="showAlert('Protection Guide')">Protection Guide</a></li>
+                            <li><a href="#" onclick="showAlert('Real Stories')">Real Stories</a></li>
+                            <li><a href="#" onclick="showAlert('FAQ')">FAQ</a></li>
+                            <li><a href="#" onclick="showAlert('Contact Us')">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Settings</h3>
+                        <div class="footer-settings">
+                            <div class="setting-group">
+                                <span>Language</span>
+                                <div class="lang-selector">
+                                    <button class="lang-option">AR</button>
+                                    <button class="lang-option active">EN</button>
+                                </div>
+                            </div>
+                            <div class="setting-group">
+                                <span>Theme</span>
+                                <button class="theme-btn" onclick="toggleTheme()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                    </svg>
+                                    Dark
+                                </button>
+                            </div>
+                            <div class="setting-group">
+                                <span>Follow Us</span>
+                                <div class="social-links">
+                                    <a href="#" onclick="showAlert('Twitter')" class="social-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" onclick="showAlert('LinkedIn')" class="social-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                            <circle cx="4" cy="4" r="2"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" onclick="showAlert('GitHub')" class="social-icon">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 CyberAware. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" onclick="showAlert('Privacy Policy')">Privacy Policy</a>
+                    <a href="#" onclick="showAlert('Terms of Service')">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script src="code4.js"></script>
+</body>
+</html>
