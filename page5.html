@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Scam - CyberAware</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+     <div class="main-container">
+        <!-- Top Navigation -->
+        <nav class="top-navigation">
+             <div class="logo">🛡️ ScamAlert</div>
+            <ul class="main-menu">
+                <li><a href="index.html" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="page2.html" onclick="navigateTo('types')">Scam Types</a></li>
+                <li><a href="#" class="current">Statistics</a></li>
+                <li><a href="page4.html">Gallery</a></li>
+                <li><a href="#" onclick="navigateTo('report')">Report a Scam</a></li>
+            </ul>
+        </nav>
+
+    <!-- Report Section -->
+    <section class="report-section">
+        <div class="page-container">
+            <div class="report-header">
+                <h1 class="page-title">Report a Scam</h1>
+                <p class="page-subtitle">Your report helps protect others from falling victim to the same scam. All information is handled confidentially.</p>
+            </div>
+
+            <!-- Alert Box -->
+            <div class="alert-box">
+                <div class="alert-header">
+                    <svg class="alert-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <h3 class="alert-title">Important Information</h3>
+                </div>
+                <div class="alert-content">
+                    <ul>
+                        <li>This is not an emergency service. For urgent matters, contact local authorities.</li>
+                        <li>Reports are used for awareness and education purposes only.</li>
+                        <li>We do not investigate individual cases or pursue legal action.</li>
+                        <li>You can report anonymously if you prefer.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Report Form -->
+            <form class="report-form" id="reportForm">
+                <!-- Scam Type -->
+                <div class="form-group">
+                    <label class="form-label">What type of scam did you encounter? <span class="required-mark">*</span></label>
+                    <select class="form-select" required>
+                        <option value="">Select a scam type</option>
+                        <option value="phishing">Phishing Email</option>
+                        <option value="sms">SMS/Text Scam</option>
+                        <option value="phone">Phone Call Scam</option>
+                        <option value="website">Fake Website</option>
+                        <option value="social">Social Media Scam</option>
+                        <option value="romance">Romance Scam</option>
+                        <option value="investment">Investment Scam</option>
+                        <option value="job">Job Offer Scam</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Contact Method -->
+                <div class="form-group">
+                    <label class="form-label">How did the scammer contact you? <span class="required-mark">*</span></label>
+                    <div class="contact-grid">
+                        <div class="contact-option" onclick="selectContact(this, 'email')">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <span class="contact-label">Email</span>
+                        </div>
+                        <div class="contact-option" onclick="selectContact(this, 'phone')">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <span class="contact-label">Phone</span>
+                        </div>
+                        <div class="contact-option" onclick="selectContact(this, 'sms')">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"/>
+                                </svg>
+                            </div>
+                            <span class="contact-label">SMS</span>
+                        </div>
+                        <div class="contact-option" onclick="selectContact(this, 'website')">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                                </svg>
+                            </div>
+                            <span class="contact-label">Website</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="contactMethod" required>
+                </div>
+
+                <!-- When -->
+                <div class="form-group">
+                    <label class="form-label">When did this occur? <span class="required-mark">*</span></label>
+                    <input type="date" class="form-input" required>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label class="form-label">Describe what happened <span class="required-mark">*</span></label>
+                    <textarea class="form-textarea" placeholder="Please provide as much detail as possible: what they said, what they asked for, any websites or phone numbers, etc." required></textarea>
+                </div>
+
+                <!-- Financial Loss -->
+                <div class="form-group">
+                    <label class="form-label">Did you lose money? (Optional)</label>
+                    <input type="text" class="form-input" placeholder="e.g., $500 or No financial loss">
+                </div>
+
+                <!-- Upload Evidence -->
+                <div class="form-group">
+                    <label class="form-label">Upload evidence (Optional)</label>
+                    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                        <div class="upload-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <p class="upload-text">Click to upload screenshots, emails, or other evidence</p>
+                        <p class="upload-hint">PNG, JPG, PDF up to 10MB</p>
+                    </div>
+                    <input type="file" id="fileInput" style="display: none;" accept="image/*,.pdf" multiple>
+                </div>
+
+                <!-- Email for Follow-up -->
+                <div class="form-group">
+                    <label class="form-label">Your email (Optional for follow-up)</label>
+                    <input type="email" class="form-input" placeholder="your@email.com">
+                </div>
+
+                <!-- Anonymous Checkbox -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="anonymous" class="checkbox-input" checked>
+                    <label for="anonymous" class="checkbox-label">Submit this report anonymously</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submit Report</button>
+            </form>
+
+            <!-- Help Section -->
+            <div class="help-section">
+                <h2 class="help-title">Need Immediate Help?</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3 class="help-card-title">Contact Your Bank</h3>
+                        <p class="help-card-text">If you shared financial information, contact your bank immediately to secure your accounts.</p>
+                    </div>
+                    <div class="help-card">
+                        <h3 class="help-card-title">Local Authorities</h3>
+                        <p class="help-card-text">For serious fraud or threats, file a report with your local police or cybercrime unit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Report scams to protect others!')">Report a Scam</a></li>
+                        <li><a href="#" onclick="alert('Learn more safety tips!')">Safety Tips</a></li>
+                        <li><a href="#" onclick="alert('Stay informed about latest threats!')">Latest Threats</a></li>
+                        <li><a href="#" onclick="alert('Get help now!')">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Learn about our mission!')">About Us</a></li>
+                        <li><a href="#" onclick="alert('Join our mission!')">Our Mission</a></li>
+                        <li><a href="#" onclick="alert('Contact us!')">Contact</a></li>
+                        <li><a href="#" onclick="alert('Join our team!')">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Read our privacy policy')">Privacy Policy</a></li>
+                        <li><a href="#" onclick="alert('View terms of service')">Terms of Service</a></li>
+                        <li><a href="#" onclick="alert('Cookie policy')">Cookie Policy</a></li>
+                        <li><a href="#" onclick="alert('Legal disclaimer')">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#" onclick="alert('Follow us on Twitter!')">Twitter</a></li>
+                        <li><a href="#" onclick="alert('Like us on Facebook!')">Facebook</a></li>
+                        <li><a href="#" onclick="alert('Connect on LinkedIn!')">LinkedIn</a></li>
+                        <li><a href="#" onclick="alert('Subscribe to our newsletter!')">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 ScamAlert. All rights reserved. Stay safe online. </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="code5.js"></script>
+</body>
+</html>
